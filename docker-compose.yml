@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  voting-arena-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_INJECTIVE_NETWORK=testnet
+      - NEXT_PUBLIC_CHAIN_ID=injective-888
+      - NEXT_PUBLIC_RPC_ENDPOINT=https://testnet.sentry.tm.injective.network:443"
+      - NEXT_PUBLIC_VOTING_CONTRACT_ADDRESS=inj14hj2tavq8fpesdwwxe544p6322ptch263k326m
+    restart: always
